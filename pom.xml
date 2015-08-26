@@ -8,15 +8,15 @@
     <packaging>pom</packaging>
     <name>Noesis Informatica Parent</name>
     <description>The Organisation POM for all Noesis Informatica projects</description>
-    <url>http://noesisinformatica.com</url>
+    <url>https://noesisinformatica.com</url>
     <ciManagement>
-        <url>https://noesisinformatica.ci.cloudbees.com/job/Noesis-Org/</url>
+        <url>http://ci.noesisinformatica.com/job/Noesis-Org/</url>
     </ciManagement>
 
     <!-- Organisation Information -->
     <organization>
         <name>Noesis Informatica</name>
-        <url>http://www.noesisinformatica.com</url>
+        <url>https://www.noesisinformatica.com</url>
     </organization>
 
     <developers>
@@ -62,11 +62,12 @@
         <deploy.plugin.version>2.8.1</deploy.plugin.version>
         <javadoc.plugin.version>2.9.1</javadoc.plugin.version>
         <surefire.plugin.version>2.17</surefire.plugin.version>
-        <release.plugin.version>2.5</release.plugin.version>
+        <release.plugin.version>2.5.2</release.plugin.version>
         <compiler.plugin.version>3.1</compiler.plugin.version>
         <build.helper.plugin.version>1.8</build.helper.plugin.version>
-        <build.number.plugin.version>1.2</build.number.plugin.version>
+        <build.number.plugin.version>1.3</build.number.plugin.version>
         <info.reports.plugin.version>2.7</info.reports.plugin.version>
+        <skip.license.plugin>false</skip.license.plugin>
     </properties>
 
     <repositories>
@@ -444,6 +445,13 @@
                 <configuration>
                     <licenseName>noesis_license</licenseName>
                     <licenseResolver>classpath://com/noesisinformatica/license</licenseResolver>
+                    <skipAddThirdParty>${skip.license.plugin}</skipAddThirdParty>
+                    <skipAggregateAddThirdParty>${skip.license.plugin}</skipAggregateAddThirdParty>
+                    <skipCheckLicense>${skip.license.plugin}</skipCheckLicense>
+                    <skipDownloadLicenses>${skip.license.plugin}</skipDownloadLicenses>
+                    <skipThirdPartyReport>${skip.license.plugin}</skipThirdPartyReport>
+                    <skipUpdateLicense>${skip.license.plugin}</skipUpdateLicense>
+                    <skipUpdateProjectLicense>${skip.license.plugin}</skipUpdateProjectLicense>
                 </configuration>
                 <executions>
                     <execution>
@@ -568,25 +576,6 @@
                     </execution>
                 </executions>
             </plugin>
-            <!--<plugin>-->
-                <!--<groupId>org.codehaus.mojo</groupId>-->
-                <!--<artifactId>build-helper-maven-plugin</artifactId>-->
-                <!--<version>${build.helper.plugin.version}</version>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<id>remove-old-artifacts</id>-->
-                        <!--<phase>package</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>remove-project-artifact</goal>-->
-                        <!--</goals>-->
-                        <!--<configuration>-->
-                            <!--&lt;!&ndash; When true, remove all built artifacts including all versions.-->
-                                 <!--When false, remove all built artifacts of this project version &ndash;&gt;-->
-                            <!--<removeAll>false</removeAll>-->
-                        <!--</configuration>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-            <!--</plugin>-->
         </plugins>
     </build>
 
