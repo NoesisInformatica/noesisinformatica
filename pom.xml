@@ -445,13 +445,6 @@
                 <configuration>
                     <licenseName>noesis_license</licenseName>
                     <licenseResolver>classpath://com/noesisinformatica/license</licenseResolver>
-                    <skipAddThirdParty>${skip.license.plugin}</skipAddThirdParty>
-                    <skipAggregateAddThirdParty>${skip.license.plugin}</skipAggregateAddThirdParty>
-                    <skipCheckLicense>${skip.license.plugin}</skipCheckLicense>
-                    <skipDownloadLicenses>${skip.license.plugin}</skipDownloadLicenses>
-                    <skipThirdPartyReport>${skip.license.plugin}</skipThirdPartyReport>
-                    <skipUpdateLicense>${skip.license.plugin}</skipUpdateLicense>
-                    <skipUpdateProjectLicense>${skip.license.plugin}</skipUpdateProjectLicense>
                 </configuration>
                 <executions>
                     <execution>
@@ -489,7 +482,8 @@
                         <id>add-third-party</id>
                         <phase>process-resources</phase>
                         <goals>
-                            <goal>aggregate-add-third-party</goal>
+                            <!-- do not enable aggregate goal, it messses up multi module projects-->
+                            <goal>add-third-party</goal>
                         </goals>
                     </execution>
                 </executions>
