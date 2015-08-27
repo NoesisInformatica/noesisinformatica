@@ -407,37 +407,6 @@
                     </execution>
                 </executions>
             </plugin>
-            <!--
-                Use clean plugin to delete LICENSE.txt file in src folder if it exists.
-                This file is recreated by the license plugin below. This ensures we always
-                have the correct version number for the artefact - since the replacer
-                plugin adds this information.
-            -->
-            <plugin>
-                <artifactId>maven-clean-plugin</artifactId>
-                <version>${clean.plugin.version}</version>
-                <executions>
-                    <execution>
-                        <id>delete-existing-license-file</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>clean</goal>
-                        </goals>
-                        <configuration>
-                            <failOnError>false</failOnError>
-                            <filesets>
-                                <fileset>
-                                    <directory>${project.basedir}</directory>
-                                    <includes>
-                                        <include>LICENSE.txt</include>
-                                    </includes>
-                                    <followSymlinks>false</followSymlinks>
-                                </fileset>
-                            </filesets>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>license-maven-plugin</artifactId>
@@ -673,7 +642,9 @@
                                 <!--<Embed-Dependency>*;scope=compile|runtime;inline=false</Embed-Dependency>-->
                                 <!--<Embed-Directory>target/dependency</Embed-Directory>-->
                                 <!--<Embed-StripGroup>true</Embed-StripGroup>-->
-                                <Spring-Context>META-INF/spring/bundle-context.xml</Spring-Context>
+                                <Spring-Context>META-INF/spring/${project.artifactId}-bundle-context.xml</Spring-Context>
+                                <!--<Bundle-Blueprint>META-INF/spring/${project.artifactId}-bundle-context.xml</Bundle-Blueprint>-->
+                                <Bundle-Blueprint>META-INF/spring/bundle-context-osgi.xml</Bundle-Blueprint>
                                 <!--<Bundle-Blueprint>OSGI-INF/blueprint/blueprint.xml</Bundle-Blueprint>-->
                                 <!--
                                  | each module can override these defaults in their osgi.bnd file
