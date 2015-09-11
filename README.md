@@ -7,6 +7,9 @@ POM with settings shared by all Noesis Informatica projects
 #### License
   * [Noesis Informatica License](https://noesisinformatica.com/licenses/LICENSE-1.0.txt)
 
+#### Build status
+[![Build Status](http://ci.noesisinformatica.com/buildStatus/icon?job=Noesis-Org)](http://ci.noesisinformatica.com/view/Miscellaneous/job/Noesis-Org/)
+
 #### How to use
 This POM is publicly available on Bintray. Add the following repositories to your POM file to access it:
 
