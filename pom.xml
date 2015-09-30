@@ -340,6 +340,7 @@
                     <doCheck>false</doCheck>
                     <doUpdate>false</doUpdate>
                     <revisionOnScmFailure>0</revisionOnScmFailure>
+                    <shortRevisionLength>5</shortRevisionLength>
                 </configuration>
             </plugin>
             <plugin>
