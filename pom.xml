@@ -39,7 +39,7 @@
     <scm>
         <connection>scm:git:git://github.com/noesisinformatica/noesisinformatica.git</connection>
         <developerConnection>scm:git:git@github.com:noesisinformatica/noesisinformatica.git</developerConnection>
-        <url>https://github.com/NoesisInformatica/noesisinformatica</url>
+        <url>https://github.com/noesisinformatica/noesisinformatica</url>
     </scm>
 
     <licenses>
@@ -698,37 +698,6 @@
                                 <phase>process-classes</phase>
                                 <goals>
                                     <goal>manifest</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-        <profile>
-            <id>jar</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.eclipse.virgo.bundlor</groupId>
-                        <artifactId>org.eclipse.virgo.bundlor.maven</artifactId>
-                        <version>1.1.2.RELEASE</version>
-                        <configuration>
-                            <manifestTemplate>
-                                Bundle-ManifestVersion: 2
-                                Bundle-Name: ${project.name}
-                                Bundle-SymbolicName: ${project.artifactId}
-                                Bundle-Version: ${project.version}
-                            </manifestTemplate>
-                        </configuration>
-                        <executions>
-                            <execution>
-                                <id>bundlor</id>
-                                <goals>
-                                    <goal>bundlor</goal>
                                 </goals>
                             </execution>
                         </executions>
